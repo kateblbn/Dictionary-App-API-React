@@ -1,3 +1,6 @@
+.container {
+    margin-bottom: 5rem;
+}
 .wrapper {
     margin-top: 30px;
     display: flex;
@@ -74,4 +77,23 @@
 .btn {
     border: none;
     background-color: transparent;
+}
+.word {
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    margin: 50px 0 10px 0;
+}
+.phonet {
+    color: var(--a-445-ed, #A445ED);
+    margin-bottom: 22px;
+    font-size: 22px;
+}
+.sourceFilter {
+    display: flex;
+    margin-top: 19px;
+}
+.fs {
+    color: var(--a-445-ed, #A445ED);
+    margin-left: 10px;
 }

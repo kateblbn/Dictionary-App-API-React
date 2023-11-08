@@ -15,10 +15,11 @@ code {
   width: 736px;
   margin: 0 auto;
 }
-p {
+ul, p, h1, h2, h3, h4 {
   margin: 0;
+  padding: 0;
 }
-li {
-  margin: 0;
-  padding: ;
+a {
+text-decoration: underline;
+color: black;
 }

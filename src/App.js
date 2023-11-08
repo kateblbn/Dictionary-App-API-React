@@ -7,12 +7,12 @@ function App() {
     <div className="App">
       <div className='container'>
         <ApiContext>
-          <Home />
-          <GetData />
-          <TemplateGenWord/>
+          {/* <Home /> */}
+          {/* <GetData /> */}
+          {/* <TemplateGenWord/> */}
 
           {/* <TemplateGeneral/> */}
-          <TemplateSource/>
+          {/* <TemplateSource/> */}
         </ApiContext>
       </div>
 
