@@ -33,6 +33,7 @@
 }
 .theme {
     position: relative;
+    cursor: pointer;
 }
 .circle {
     position: absolute;

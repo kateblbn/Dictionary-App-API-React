@@ -1,23 +1,21 @@
-import React, { createContext, useEffect, useState } from 'react'
-import logo from '../images/logo.svg'
-import down from '../images/icon-arrow-down.svg'
-import moon from '../images/icon-moon.svg'
+import React, { createContext, useContext, useEffect, useState } from 'react'
+// import logo from '../images/logo.svg'
+// import down from '../images/icon-arrow-down.svg'
+// import moon from '../images/icon-moon.svg'
 import search from '../images/icon-search.svg'
 import home from '../css/home.module.css'
 import TemplateGeneral, { TemmplateSynAnt, TemplateDefin } from '../template/TemplateGeneral'
+import { DataContext } from '../App'
 
 
-export const DataContext = createContext()
+// export const DataContext = createContext()
 
 function ApiContext(props) {
     const [wordData, setWordData] = useState([])
     console.log(wordData);
-    const [inpValue, setInpValue] = useState('');
+    const {btnVal, setBtnVal} = useContext(DataContext)
     const [category, setCategory] = useState('en')
-    const [error, setError] = useState('')
-    console.log(error);
 
-    const [btnVal, setBtnVal] = useState('welcome');
 
     const LINK = `https://api.dictionaryapi.dev/api/v2/entries/${category}/${btnVal}`
     useEffect(() => {
@@ -29,22 +27,26 @@ function ApiContext(props) {
                     .then(response => response.json())
                     .then(elem => setWordData(elem))
             }
-            // setError(null);
             data()
         } catch (err) {
-            setError(err)
+            
             console.log('Found some errors');
         }
     }, [LINK])
-    const getInputValue = (event) => {
-        const inputValue = event.target.value;
-        setInpValue(inputValue)
-    }
+    // const getInputValue = (event) => {
+    //     const inputValue = event.target.value;
+    //     setInpValue(inputValue)
+    // }
+    // const getInputKeyDown = (e) => {
+    //     if(e.key = 'Enter') {
+    //         setInpValue(inpValue)
+    //     }
+    // }
 
     if (Array.isArray(wordData)) {
 
         const generalWord = wordData.map(el => el.word)
-        const audio = wordData.map(el => el.phonetics.map(el => el.audio))
+        const audio = wordData.map(el => el.phonetics.map(el => el.audio ))
 
         const phonetic = wordData.map(el => el.phonetic)
 
@@ -71,7 +73,7 @@ function ApiContext(props) {
 
         return (
             <>
-                <div div className={home.containerWrap} >
+                 {/* <div div className={home.containerWrap} >
                     <div className={home.wrapper}>
                         <div className={home.imageLogo}>
                             <img src={logo} alt='logo' />
@@ -94,14 +96,14 @@ function ApiContext(props) {
                         </div>
                     </div>
                     <div className={home.search}>
-                        <input onChange={getInputValue} className={home.searchInput} type='requared' placeholder='Search for any word…' />
+                        <input onChange={getInputValue} value={inpValue} className={home.searchInput} type='requared' placeholder='Search for any word…' />
                         <div className={home.inputImg}>
                             <button className={home.btn} onClick={() => setBtnVal(inpValue)}>
                                 <img src={search} alt='search' />
                             </button>
                         </div>
                     </div>
-                </div>
+                </div>  */}
 
                 <div className={home.container}>
                     <div className={home.word}>
@@ -112,7 +114,7 @@ function ApiContext(props) {
                     </div>
                     <div>
                         <audio controls>
-                            <source src={audio} type='audio/mp3' />
+                            <source src={audio} type='audio/mpeg' />
                         </audio>
                     </div>
                     <div className={home.meaning}>
