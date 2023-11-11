@@ -1,21 +1,17 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
-// import logo from '../images/logo.svg'
-// import down from '../images/icon-arrow-down.svg'
-// import moon from '../images/icon-moon.svg'
-import search from '../images/icon-search.svg'
 import home from '../css/home.module.css'
+import error from '../css/error.module.css'
 import TemplateGeneral, { TemmplateSynAnt, TemplateDefin } from '../template/TemplateGeneral'
 import { DataContext } from '../App'
+import StartPage from '../template/StartPage'
 
 
 // export const DataContext = createContext()
 
-function ApiContext(props) {
+function ApiContext() {
     const [wordData, setWordData] = useState([])
-    console.log(wordData);
     const { btnVal, setBtnVal } = useContext(DataContext)
     const [category, setCategory] = useState('en')
-
 
     const LINK = `https://api.dictionaryapi.dev/api/v2/entries/${category}/${btnVal}`
     useEffect(() => {
@@ -33,15 +29,10 @@ function ApiContext(props) {
             console.log('Found some errors');
         }
     }, [LINK])
-    // const getInputValue = (event) => {
-    //     const inputValue = event.target.value;
-    //     setInpValue(inputValue)
-    // }
-    // const getInputKeyDown = (e) => {
-    //     if(e.key = 'Enter') {
-    //         setInpValue(inpValue)
-    //     }
-    // }
+
+    if (!btnVal ) {
+        return <StartPage/>
+    }
 
     if (Array.isArray(wordData)) {
 
@@ -97,101 +88,15 @@ function ApiContext(props) {
 
     } else {
         return (
-            <div className={home.errWrap}>
-                <p className={home.emoji}> 😦 </p>
-                <p className={home.errTitle}> {wordData.title} </p>
-                <p className={home.errMessage}> {wordData.message} </p>
-                <p className={home.errResolution}> {wordData.resolution} </p>
+            <div className={error.errWrap}>
+                <p className={error.emoji}> 😦 </p>
+                <p className={error.errTitle}> {wordData.title} </p>
+                <p className={error.errMessage}> {wordData.message} </p>
+                <p className={error.errResolution}> {wordData.resolution} </p>
             </div>
         )
     }
+
 }
 
 export default ApiContext
-
-
-
-
-
-
-
-
-
-// function ApiContext(props, {btnVal, inpValue}) {
-//     const [wordData, setWordData] = useState([])
-//     const word = 'mother'
-//     console.log(btnVal);
-//     const LINK = `https://api.dictionaryapi.dev/api/v2/entries/en/${inpValue}`
-//     useEffect(() => {
-//         try {
-//             async function data() {
-//                 await fetch(LINK, {
-//                     method: 'GET'
-//                 })
-//                     .then(response => response.json())
-//                     .then(elem => setWordData(elem))
-//             }
-//             data()
-//         } catch (error) {
-//             console.log('Found some errors');
-//         }
-//     }, [LINK])
-//     const SendWord = { wordData }
-//     return (
-//         <>
-//             <DataContext.Provider value={SendWord}>{props.children}</DataContext.Provider>
-//         </>
-//     )
-// }
-
-// export default ApiContext;
-
-
-
-
-
-
-// function Home() {
-//     const [inpValue, setInpValue] = useState('hi');
-//     const [btnVal, setBtnVal] = useState('hello');
-//     console.log(btnVal);
-//     const getInputValue = (event) => {
-//         const inputValue = event.target.value;
-//         setInpValue(inputValue)
-//         }
-//     return (
-//         <div className={home.containerWrap}>
-//             <div className={home.wrapper}>
-//                 <div className={home.imageLogo}>
-//                     <img src={logo} alt='logo' />
-//                 </div>
-//                 <div className={home.wrapRightSide}>
-//                     <div className={home.fonts}>
-//                         <div className={home.font}>Sans Serif</div>
-//                         <img src={down} alt='down' />
-//                     </div>
-//                     <div className={home.line}></div>
-//                     <div className={home.wraptheme}>
-//                         <div className={home.theme}>
-//                             <div className={home.circle}></div>
-//                             <div className={home.rectangle}></div>
-//                         </div>
-//                         <div className={home.imageMoon}>
-//                             <img src={moon} alt='moon' />
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//             <div className={home.search}>
-//                 <input onChange={getInputValue} className={home.searchInput} type='requared' placeholder='Search for any word…' />
-//                 <div className={home.inputImg}>
-//                     <button className={home.btn} onClick={() => setBtnVal(inpValue)}>
-//                         <img src={search} alt='search' />
-//                     </button>
-//                 </div>
-//             </div>
-//             {/* <ApiContext inpValue={btnVal}/> */}
-//         </div>
-//     )
-// }
-

@@ -1,48 +1,8 @@
-import React, { useContext } from 'react'
-import { DataContext } from '../api/ApiContext'
+import React from 'react'
 import useSynonym from '../hooks/useSynonym'
 import useAntonym from '../hooks/useAntonym'
 import mean from '../css/mean.module.css'
 
-// export function GetData() {
-//   const { wordData } = useContext(DataContext)
-//   const generalWord = wordData.map(el => el.word )
-//   const genFilteredWord = generalWord.filter( (e, i) => generalWord.indexOf(e) === i)
-//   // const GetSource = wordData.map(el => el.sourceUrls.map(e => e.length))
-//   const GetSource = wordData.map(el => {
-//    let c =  el.sourceUrls
-// return c
-//   } )
-//   // console.log(GetSource);
-
-// const filteredSource = GetSource.filter( (e, i) => GetSource.indexOf(e) === i)
-// // console.log(filteredSource);
-
-//   const GetMeanings = wordData.map(el => {
-//     const verb = el.meanings.map(elem => {
-//       //noun, verb, interjection
-//       const partOfSpeech = elem.partOfSpeech;
-//       const definitions = elem.definitions.map(el => <TemplateDefin defin={el.definition} />)
-//       const synonyms = elem.synonyms.map(el => <TemmplateSynAnt synon={el} />)
-//       const antonyms = elem.antonyms.map(el => <TemmplateSynAnt anton={el} />)
-//       return (
-//         <>
-//           <TemplateGeneral part={partOfSpeech} def={definitions} synonym={synonyms} antonym={antonyms} />
-//         </>
-//       )
-//     })
-//     return verb
-
-//   })
-
-//   return (
-//     <div>
-//       <h1>{genFilteredWord}</h1>
-//       {GetMeanings}
-//      <p> {filteredSource}</p>
-//     </div>
-//   )
-// }
 export function TemplateGenWord({ generalWord }) {
   return (
     <div className={mean.genWord}>
@@ -50,7 +10,6 @@ export function TemplateGenWord({ generalWord }) {
     </div>
   )
 }
-
 
 export function TemplateDefin({ defin }) {
   return (
@@ -67,7 +26,7 @@ export function TemmplateSynAnt({ synon, anton }) {
       <div className={mean.synon}>
         <div>{synon}</div>
       </div>
-      <div className={mean.anton}> 
+      <div className={mean.anton}>
         <div>{anton} </div>
       </div>
     </>
@@ -100,9 +59,7 @@ function TemplateGeneral({ def, part, synonym, antonym, generalWord, GetSource }
       <div className={mean.wrapAnton}>
         <p className={mean.anton}>Antonyms:</p>
         <div className={mean.antonRes}> {checkAntonym}</div>
-
       </div>
-      {/* {GetSource} */}
     </div>
   )
 }

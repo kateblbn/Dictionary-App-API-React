@@ -2,6 +2,8 @@
     position: relative;
     display: flex;
     justify-content: center;
+    height: 80vh;
+
 }
 .ftr {
     position: absolute;
