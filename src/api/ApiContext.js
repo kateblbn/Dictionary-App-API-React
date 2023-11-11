@@ -13,7 +13,7 @@ import { DataContext } from '../App'
 function ApiContext(props) {
     const [wordData, setWordData] = useState([])
     console.log(wordData);
-    const {btnVal, setBtnVal} = useContext(DataContext)
+    const { btnVal, setBtnVal } = useContext(DataContext)
     const [category, setCategory] = useState('en')
 
 
@@ -29,7 +29,7 @@ function ApiContext(props) {
             }
             data()
         } catch (err) {
-            
+
             console.log('Found some errors');
         }
     }, [LINK])
@@ -46,7 +46,7 @@ function ApiContext(props) {
     if (Array.isArray(wordData)) {
 
         const generalWord = wordData.map(el => el.word)
-        const audio = wordData.map(el => el.phonetics.map(el => el.audio ))
+        const audio = wordData.map(el => el.phonetics.map(el => el.audio))
 
         const phonetic = wordData.map(el => el.phonetic)
 
@@ -73,38 +73,6 @@ function ApiContext(props) {
 
         return (
             <>
-                 {/* <div div className={home.containerWrap} >
-                    <div className={home.wrapper}>
-                        <div className={home.imageLogo}>
-                            <img src={logo} alt='logo' />
-                        </div>
-                        <div className={home.wrapRightSide}>
-                            <div className={home.fonts}>
-                                <div className={home.font}>Sans Serif</div>
-                                <img src={down} alt='down' />
-                            </div>
-                            <div className={home.line}></div>
-                            <div className={home.wraptheme}>
-                                <div className={home.theme}>
-                                    <div className={home.circle}></div>
-                                    <div className={home.rectangle}></div>
-                                </div>
-                                <div className={home.imageMoon}>
-                                    <img src={moon} alt='moon' />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={home.search}>
-                        <input onChange={getInputValue} value={inpValue} className={home.searchInput} type='requared' placeholder='Search for any word…' />
-                        <div className={home.inputImg}>
-                            <button className={home.btn} onClick={() => setBtnVal(inpValue)}>
-                                <img src={search} alt='search' />
-                            </button>
-                        </div>
-                    </div>
-                </div>  */}
-
                 <div className={home.container}>
                     <div className={home.word}>
                         <h1 className={home.genWord}>{genFilteredWord}</h1>
@@ -112,30 +80,30 @@ function ApiContext(props) {
                     <div className={home.phonet}>
                         <p className={home.phonetGen}>{phonetic}</p>
                     </div>
-                    <div>
+                    {/* <div>
                         <audio controls>
                             <source src={audio} type='audio/mpeg' />
                         </audio>
-                    </div>
+                    </div> */}
                     <div className={home.meaning}>
                         {GetMeanings}
                     </div>
                     <div className={home.source}>
-                        <div className={home.sourceFilter}>  <span className={home.fs}>{GetSource}</span> </div>
+                        <div className={home.sourceFilter}>  <div className={home.fs}>{GetSource}</div> </div>
                     </div>
                 </div>
             </>
         )
 
     } else {
-        return <div>
-            <p> {wordData.title} </p>
-            <p> {wordData.message} </p>
-            <p> {wordData.resolution} </p>
-
-        </div>
-
-
+        return (
+            <div className={home.errWrap}>
+                <p className={home.emoji}> 😦 </p>
+                <p className={home.errTitle}> {wordData.title} </p>
+                <p className={home.errMessage}> {wordData.message} </p>
+                <p className={home.errResolution}> {wordData.resolution} </p>
+            </div>
+        )
     }
 }
 

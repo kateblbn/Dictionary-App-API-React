@@ -14,14 +14,10 @@ function Header() {
     const { btnVal, setBtnVal } = useContext(DataContext)
 
     const [theme, setTheme] = useState('light');
-console.log(theme);
+    console.log(theme);
     const switchTheme = () => {
         theme === 'light' ? setTheme('dark') : setTheme('light')
     }
-const changevalue = () => {
-    if(theme === 'light') {
-        console.log('yes') }
-}
 
     const getInputValue = (event) => {
         const inputValue = event.target.value;
@@ -33,8 +29,6 @@ const changevalue = () => {
             <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
 
                 <GlobalStyles />
-
-
                 <div div className={home.containerWrap} >
                     <div className={home.wrapper}>
                         <div className={home.imageLogo}>
@@ -47,9 +41,9 @@ const changevalue = () => {
                             </div>
                             <div className={home.line}></div>
                             <div className={home.wraptheme}>
-                                <div onClick={switchTheme}  className={home.theme}>
-                                    <div className={home.circle}></div>
-                                    <div className={home.rectangle}></div>
+                                <div onClick={switchTheme} className={home.theme}>
+                                    <span className={home.circle}></span>
+                                    <span className={home.rectangle}></span>
                                 </div>
                                 <div className={home.imageMoon}>
                                     <img src={moon} alt='moon' />
@@ -66,7 +60,7 @@ const changevalue = () => {
                         </div>
                     </div>
                 </div>
-                </ThemeProvider >
+            </ThemeProvider >
 
         </div>
     )

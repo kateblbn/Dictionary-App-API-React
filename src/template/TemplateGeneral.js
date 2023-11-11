@@ -65,10 +65,10 @@ export function TemmplateSynAnt({ synon, anton }) {
   return (
     <>
       <div className={mean.synon}>
-        <span>{synon}</span>
+        <div>{synon}</div>
       </div>
       <div className={mean.anton}> 
-        <span>{anton} </span>
+        <div>{anton} </div>
       </div>
     </>
   )
@@ -95,7 +95,7 @@ function TemplateGeneral({ def, part, synonym, antonym, generalWord, GetSource }
       </div>
       <div className={mean.wrapSynon}>
         <p className={mean.synon}>Synonyms:</p>
-        <span className={mean.synonRes}> {checkSynon}</span>
+        <div className={mean.synonRes}> {checkSynon}</div>
       </div>
       <div className={mean.wrapAnton}>
         <p className={mean.anton}>Antonyms:</p>

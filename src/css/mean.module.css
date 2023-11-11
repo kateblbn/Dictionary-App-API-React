@@ -16,7 +16,7 @@
     height: 2px;
     background: var(--e-9-e-9-e-9, #E9E9E9);
 }
-.meanTitle, .definList {
+.meanTitle {
     color: var(--757575, #757575);
     font-family: Inconsolata;
     font-weight: normal;
@@ -26,10 +26,13 @@
 
 }
 .definList {
-    color: var(--757575, #5f5d5d);
+    /* color: var(--757575, #5f5d5d); */
     margin-left: 22px;
     margin-top: 18px;
     font-size: 20px;
+    font-family: Inconsolata;
+    font-weight: normal;
+
 }
 .list {
     list-style-type: disc;
@@ -58,4 +61,6 @@
 }
 .synon, .anton {
     margin-right: 40px;
+    color: var(--757575, #757575);
+
 }
