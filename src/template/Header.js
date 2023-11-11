@@ -11,10 +11,12 @@ import { GlobalStyles, darkTheme, lightTheme } from '../theme/theme'
 
 function Header() {
     const [inpValue, setInpValue] = useState('');
-    const { btnVal, setBtnVal } = useContext(DataContext)
 
+    const { btnVal, setBtnVal } = useContext(DataContext)
+    console.log(btnVal);
     const [theme, setTheme] = useState('light');
     console.log(theme);
+
     const switchTheme = () => {
         theme === 'light' ? setTheme('dark') : setTheme('light')
     }
@@ -52,7 +54,13 @@ function Header() {
                         </div>
                     </div>
                     <div className={home.search}>
-                        <input onChange={getInputValue} /*onKeyDown={getInputKeyDown}*/ value={inpValue} className={home.searchInput} type='requared' placeholder='Search for any word…' />
+                        <input
+                            onKeyDown={(e) => { if (e.key === 'Enter') { setBtnVal(e.target.value) } }}
+                            onChange={getInputValue} 
+                            value={inpValue} 
+                            className={home.searchInput} 
+                            type='requared'
+                            placeholder='Search for any word…' />
                         <div className={home.inputImg}>
                             <button className={home.btn} onClick={() => setBtnVal(inpValue)}>
                                 <img src={search} alt='search' />

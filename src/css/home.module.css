@@ -82,6 +82,7 @@
 .btn {
     border: none;
     background-color: transparent;
+    cursor: pointer;
 }
 .word {
     font-size: 25px;

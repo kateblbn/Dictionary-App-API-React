@@ -6,7 +6,7 @@ import Footer from "./template/Footer";
 export const DataContext = createContext()
 
 function App() {
-  const [btnVal, setBtnVal] = useState('');
+  const [btnVal, setBtnVal] = useState('welcome');
   const value = { btnVal, setBtnVal }
   return (
     <DataContext.Provider value={value}>

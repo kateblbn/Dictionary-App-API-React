@@ -3,10 +3,6 @@ import home from '../css/home.module.css'
 import error from '../css/error.module.css'
 import TemplateGeneral, { TemmplateSynAnt, TemplateDefin } from '../template/TemplateGeneral'
 import { DataContext } from '../App'
-import StartPage from '../template/StartPage'
-
-
-// export const DataContext = createContext()
 
 function ApiContext() {
     const [wordData, setWordData] = useState([])
@@ -30,9 +26,6 @@ function ApiContext() {
         }
     }, [LINK])
 
-    if (!btnVal ) {
-        return <StartPage/>
-    }
 
     if (Array.isArray(wordData)) {
 
