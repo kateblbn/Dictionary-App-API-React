@@ -18,7 +18,7 @@
 }
 .meanTitle {
     color: var(--757575, #757575);
-    font-family: Inconsolata;
+    /* font-family: Inconsolata; */
     font-weight: normal;
 }
 .meanTitle {
@@ -30,7 +30,7 @@
     margin-left: 22px;
     margin-top: 18px;
     font-size: 20px;
-    font-family: Inconsolata;
+    /* font-family: Inconsolata; */
     font-weight: normal;
 
 }
@@ -49,7 +49,7 @@
 }
 .wrapSynon, .wrapAnton {
     display: flex;
-    font-family: Inconsolata;
+    /* font-family: Inconsolata; */
     font-size: 20px;
     font-style: normal;
     font-weight: 500;

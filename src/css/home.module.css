@@ -1,6 +1,10 @@
 .container {
     margin-bottom: 5rem;
 }
+.containerWrap {
+    position: relative;
+
+}
 .wrapper {
     margin-top: 30px;
     display: flex;
@@ -10,12 +14,16 @@
 }
 .wrapRightSide {
     display: flex;
-    width: 200px;
+    /* width: 200px; */
 
+}
+.font {
+    font-family: 'Inter', sans-serif;  
 }
 .fonts {
     display: flex;
     height: 24px;
+    width: 113px;
     justify-content: center;
     align-items: center;
     gap: 18px;
