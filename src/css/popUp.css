@@ -1,10 +1,11 @@
 .pop_noactive {
     display: none;
+    transition: 2s all;
 }
 .pop_active {
-    /* position: relative; */
     display: flex;
     flex-direction: column;
+    transition: 2s all;
 }
 .pop__wrap {
     position: absolute;
@@ -50,4 +51,14 @@
 }
 .open {
     display: block;
+}
+.hideImg {
+    display: none;
+}
+.imgPop {
+    cursor: pointer;
+}
+.margin {
+    padding-right: 3px;
+    cursor: pointer;
 }

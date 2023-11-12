@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import home from '../css/home.module.css'
 import logo from '../images/logo.svg'
 import down from '../images/icon-arrow-down.svg'
+import up from '../images/icon-arrow-up.svg'
 import moon from '../images/icon-moon.svg'
 import search from '../images/icon-search.svg'
 import '../css/popUp.css'
@@ -15,14 +16,18 @@ function Header() {
     const { btnVal, setBtnVal, fonts, setFonts } = useContext(DataContext)
     const [theme, setTheme] = useState('light');
     const [open, setOpen] = useState(false)
-    console.log(fonts);
+    console.log(open);
     const changeSans = () => setFonts((prevState) => (!prevState) ? 'sans__font' : 'sans__font');
     const changeSerif = () => setFonts((prevState) => (!prevState) ? 'serif__font' : 'serif__font');
     const changeMono = () => setFonts((prevState) => (!prevState) ? 'mono__font' : 'mono__font');
 
-    const popUp = (open) ? 'pop_active' : 'pop_noactive';
+    const popUp = (open === true) ? 'pop_active' : 'pop_noactive';
+    const closePopUp = () => {
+        setOpen(false)
+    }
 
-    // const closePopUp = (!open) ? 'close' : 'open';
+
+    // const closePopUp = (open) ? 'open' : 'close';
 
     const switchTheme = () => {
         theme === 'light' ? setTheme('dark') : setTheme('light')
@@ -44,30 +49,30 @@ function Header() {
                             <img src={logo} alt='logo' />
                         </div>
                         <div className={home.wrapRightSide}>
-                            <div>
-                                <div onClick={(e) => { if (e) return setOpen(true) }} className={home.fonts}>
+                            <div className={home.wrapRightSideFlex} >
+                                <div onClick={() => setOpen(true)} className={home.fonts}>
                                     <div className={home.font}>Sans Serif</div>
-                                    <img src={down} alt='down' />
+                                    <img className={(open === true)? 'hideImg': 'imgPop'} src={down} alt='down' width='12px'/>
                                 </div>
-
-                                <div className={popUp}>
-                                    <div className='closePopUp'
-                                    // onClick={React.useEffect(() => {
-                                    //     document.addEventListener('onmousedown', setOpen)
-                                    //     return () => document.removeEventListener('onmousedown', setOpen)
-                                    // }, [])}
-                                    >
-                                        <span className='pop__wrap'>
-                                            <p onClick={changeSans} className='pop__sans'>Sans Serif</p>
-                                            <p onClick={changeSerif} className='pop__serif'>Serif</p>
-                                            <p onClick={changeMono} className='pop__mono'>Mono</p>
-                                        </span>
-
-                                    </div>
-                                </div>
-
+                                <img className={(open === false)? 'hideImg': 'margin'} onClick={closePopUp} src={up} alt='up' width='12px' />
                             </div>
 
+                            <div className={popUp}>
+                                <div className='closePopUp'
+                                // onClick={React.useEffect(() => {
+                                //     document.addEventListener('onmousedown', setOpen)
+                                //     return () => document.removeEventListener('onmousedown', setOpen)
+                                // }, [])}
+                                >
+                                    <span className='pop__wrap'>
+                                        <p onClick={closePopUp}></p>
+                                        <p onClick={changeSans} className='pop__sans'>Sans Serif</p>
+                                        <p onClick={changeSerif} className='pop__serif'>Serif</p>
+                                        <p onClick={changeMono} className='pop__mono'>Mono</p>
+
+                                    </span>
+                                </div>
+                            </div>
                             <div className={home.line}></div>
                             <div className={home.wraptheme}>
                                 <div onClick={switchTheme} className={home.theme}>

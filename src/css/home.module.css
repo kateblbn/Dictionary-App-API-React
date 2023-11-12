@@ -3,19 +3,19 @@
 }
 .containerWrap {
     position: relative;
-
 }
 .wrapper {
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
     height: 32px;
-
 }
 .wrapRightSide {
     display: flex;
-    /* width: 200px; */
-
+    align-items: center;
+}
+.wrapRightSideFlex {
+    display: flex;
 }
 .font {
     font-family: 'Inter', sans-serif;  
@@ -48,7 +48,6 @@
     position: absolute;
     top: 3px;
     margin-left: 5px;
-    /* left: 3px; */
     width: 13px;
     height: 13px;
     background-color: white !important;
