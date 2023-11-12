@@ -1,10 +1,10 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import home from '../css/home.module.css'
 import error from '../css/error.module.css'
-import TemplateGeneral, { TemmplateSynAnt, TemplateDefin } from '../template/TemplateGeneral'
+import TemplateGeneral, { TemmplateSynAnt, TemplateDefin } from './TemplateGeneral'
 import { DataContext } from '../App'
 
-function ApiContext() {
+function Template() {
     const [wordData, setWordData] = useState([])
     const { btnVal, setBtnVal } = useContext(DataContext)
     const [category, setCategory] = useState('en')
@@ -92,4 +92,4 @@ function ApiContext() {
 
 }
 
-export default ApiContext
+export default Template

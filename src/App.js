@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import ApiContext from "./api/ApiContext";
+import Template from "./template/Template";
 import Header from "./template/Header";
 import Footer from "./template/Footer";
 import './css/popUp.css'
@@ -16,7 +16,7 @@ function App() {
       <div className={fonts}>
         <div className='container'>
           <Header />
-          <ApiContext />
+          <Template />
           <Footer />
         </div>
       </div>

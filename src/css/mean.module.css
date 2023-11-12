@@ -9,7 +9,6 @@
     text-align: center;
     align-items:center;
     margin-top: 25px;
-
 }
 .line {
     width: 100%;
@@ -18,7 +17,6 @@
 }
 .meanTitle {
     color: var(--757575, #757575);
-    /* font-family: Inconsolata; */
     font-weight: normal;
 }
 .meanTitle {
@@ -26,11 +24,9 @@
 
 }
 .definList {
-    /* color: var(--757575, #5f5d5d); */
     margin-left: 22px;
     margin-top: 18px;
     font-size: 20px;
-    /* font-family: Inconsolata; */
     font-weight: normal;
 
 }
@@ -49,7 +45,6 @@
 }
 .wrapSynon, .wrapAnton {
     display: flex;
-    /* font-family: Inconsolata; */
     font-size: 20px;
     font-style: normal;
     font-weight: 500;

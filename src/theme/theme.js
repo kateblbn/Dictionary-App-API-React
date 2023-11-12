@@ -7,7 +7,6 @@ export const darkTheme = {
     headingColor: '#f6f4f4 ',
     right: '5px !important',
     background: '#A445ED !important'
-    // left: '0px !important'
 }
 export const lightTheme = {
     body: '#fff',

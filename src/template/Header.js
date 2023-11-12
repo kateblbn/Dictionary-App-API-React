@@ -26,9 +26,6 @@ function Header() {
         setOpen(false)
     }
 
-
-    // const closePopUp = (open) ? 'open' : 'close';
-
     const switchTheme = () => {
         theme === 'light' ? setTheme('dark') : setTheme('light')
     }
@@ -52,24 +49,18 @@ function Header() {
                             <div className={home.wrapRightSideFlex} >
                                 <div onClick={() => setOpen(true)} className={home.fonts}>
                                     <div className={home.font}>Sans Serif</div>
-                                    <img className={(open === true)? 'hideImg': 'imgPop'} src={down} alt='down' width='12px'/>
+                                    <img className={(open === true) ? 'hideImg' : 'imgPop'} src={down} alt='down' width='12px' />
                                 </div>
-                                <img className={(open === false)? 'hideImg': 'margin'} onClick={closePopUp} src={up} alt='up' width='12px' />
+                                <img className={(open === false) ? 'hideImg' : 'margin'} onClick={closePopUp} src={up} alt='up' width='12px' />
                             </div>
 
                             <div className={popUp}>
-                                <div className='closePopUp'
-                                // onClick={React.useEffect(() => {
-                                //     document.addEventListener('onmousedown', setOpen)
-                                //     return () => document.removeEventListener('onmousedown', setOpen)
-                                // }, [])}
-                                >
+                                <div className='closePopUp'>
                                     <span className='pop__wrap'>
                                         <p onClick={closePopUp}></p>
                                         <p onClick={changeSans} className='pop__sans'>Sans Serif</p>
                                         <p onClick={changeSerif} className='pop__serif'>Serif</p>
                                         <p onClick={changeMono} className='pop__mono'>Mono</p>
-
                                     </span>
                                 </div>
                             </div>

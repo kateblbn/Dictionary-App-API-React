@@ -32,13 +32,6 @@ export function TemmplateSynAnt({ synon, anton }) {
     </>
   )
 }
-export function TemplateSource({ GetSource }) {
-  return (
-    <>
-      {/* <div>Source <span>{GetSource}</span></div> */}
-    </>
-  )
-}
 function TemplateGeneral({ def, part, synonym, antonym, generalWord, GetSource }) {
   const [checkSynon] = useSynonym(synonym)
   const [checkAntonym] = useAntonym(antonym)
