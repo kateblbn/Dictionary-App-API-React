@@ -4,6 +4,8 @@ import logo from '../images/logo.svg'
 import down from '../images/icon-arrow-down.svg'
 import up from '../images/icon-arrow-up.svg'
 import moon from '../images/icon-moon.svg'
+import sun from '../images/sun.png'
+
 import search from '../images/icon-search.svg'
 import '../css/popUp.css'
 import { DataContext } from '../App'
@@ -16,7 +18,7 @@ function Header() {
     const { btnVal, setBtnVal, fonts, setFonts } = useContext(DataContext)
     const [theme, setTheme] = useState('light');
     const [open, setOpen] = useState(false)
-    console.log(open);
+    console.log(fonts);
     const changeSans = () => setFonts((prevState) => (!prevState) ? 'sans__font' : 'sans__font');
     const changeSerif = () => setFonts((prevState) => (!prevState) ? 'serif__font' : 'serif__font');
     const changeMono = () => setFonts((prevState) => (!prevState) ? 'mono__font' : 'mono__font');
@@ -65,13 +67,14 @@ function Header() {
                                 </div>
                             </div>
                             <div className={home.line}></div>
-                            <div className={home.wraptheme}>
-                                <div onClick={switchTheme} className={home.theme}>
+                            <div onClick={switchTheme} className={home.wraptheme}>
+                                <div className={home.theme}>
                                     <span className={home.circle}></span>
                                     <span className={home.rectangle}></span>
                                 </div>
                                 <div className={home.imageMoon}>
-                                    <img src={moon} alt='moon' />
+                                    <img className={(theme === 'light') ? 'hideImg' : 'imgPop'} src={moon} alt='moon' />
+                                    <img className={(theme === 'dark') ? 'hideImg' : 'imgThemeChange'} src={sun} alt='sun' />
                                 </div>
                             </div>
                         </div>

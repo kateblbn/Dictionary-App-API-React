@@ -1,5 +1,6 @@
 {
   "name": "dictionary-app",
+  "homepage": "https://sites-co.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
