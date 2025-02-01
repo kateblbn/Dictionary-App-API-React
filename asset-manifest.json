@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/Dictionary-App-API-React/static/css/main.b5574f96.css",
+    "main.js": "/Dictionary-App-API-React/static/js/main.ed12cdf9.js",
+    "index.html": "/Dictionary-App-API-React/index.html",
+    "static/media/logo.svg": "/Dictionary-App-API-React/static/media/logo.afbe15e827b060eab1c775e3afad2b73.svg",
+    "static/media/icon-moon.svg": "/Dictionary-App-API-React/static/media/icon-moon.fd52e618de9fdb62d0edd814557c07e3.svg",
+    "static/media/icon-search.svg": "/Dictionary-App-API-React/static/media/icon-search.13357ba7763bb4388cba203d0388c375.svg",
+    "static/media/icon-arrow-up.svg": "/Dictionary-App-API-React/static/media/icon-arrow-up.f78a89786acfc27f2caf3932744a2478.svg",
+    "static/media/icon-arrow-down.svg": "/Dictionary-App-API-React/static/media/icon-arrow-down.aa902848ffe2b4ed5369af17076de50d.svg",
+    "main.b5574f96.css.map": "/Dictionary-App-API-React/static/css/main.b5574f96.css.map",
+    "main.ed12cdf9.js.map": "/Dictionary-App-API-React/static/js/main.ed12cdf9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b5574f96.css",
+    "static/js/main.ed12cdf9.js"
+  ]
+}
